@@ -1,4 +1,4 @@
-package com.kang.blog.domain;
+package com.kang.blog.user.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

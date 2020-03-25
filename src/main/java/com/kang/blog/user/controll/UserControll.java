@@ -1,7 +1,7 @@
-package com.kang.blog.controll;
+package com.kang.blog.user.controll;
 
-import com.kang.blog.dto.UserDto;
-import com.kang.blog.service.UserService;
+import com.kang.blog.user.dto.UserDto;
+import com.kang.blog.user.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ public class UserControll {
     private UserService userService;
 
     // 메인 페이지
-    @GetMapping("/")
+    @GetMapping("/home")
     public String index() {
         return "/home";
     }

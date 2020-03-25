@@ -1,6 +1,6 @@
-package com.kang.blog.service;
+package com.kang.blog.user.service;
 
-import com.kang.blog.domain.Role;
+import com.kang.blog.user.domain.Role;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

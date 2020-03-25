@@ -1,4 +1,4 @@
-package com.kang.blog.dto;
+package com.kang.blog.user.dto;
 import lombok.*;
 
 
