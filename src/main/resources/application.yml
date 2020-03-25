@@ -1,8 +1,14 @@
 spring:
   # Templates reloading during development
   thymeleaf:
-    prefix: file:src/main/resources/templates/
-    cache: false
+      check-template: true
+      check-template-location: true
+      content-type: text/html
+      enabled: true
+      encoding: UTF-8
+      suffix: .html
+      prefix: file:src/main/resources/templates/
+      cache: false
 
   datasource:
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy

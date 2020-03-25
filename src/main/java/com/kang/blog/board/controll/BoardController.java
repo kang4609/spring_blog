@@ -14,12 +14,12 @@ public class BoardController {
 
     @GetMapping("/board")
     public String list() {
-        return "board/list.html";
+        return "board/list";
     }
 
     @GetMapping("/board/post")
     public String write() {
-        return "board/write.html";
+        return "board/write";
     }
 
     @PostMapping("/board/post")
