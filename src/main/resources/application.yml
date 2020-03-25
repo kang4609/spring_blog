@@ -1,7 +1,12 @@
 spring:
+  # Templates reloading during development
+  thymeleaf:
+    prefix: file:src/main/resources/templates/
+    cache: false
+
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://localhost:3306/blog?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
     password: 1111
 
@@ -11,11 +16,14 @@ spring:
     show-sql: true
     hibernate:
       format_sql: true
-      ddl-auto: none
+      ddl-auto: create
 #    ddl-auto: create # SessionFactory가 시작될 때 데이터베이스 drop을 실행하고 생성된 DDL을 실행한다
+
+
 
 logging:
   level:
+    com.kang.blog.*: DEBUG
     org:
       hibernate:
         SQL: DEBUG
@@ -23,3 +31,4 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
+
