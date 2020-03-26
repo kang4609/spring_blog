@@ -16,7 +16,7 @@ spring:
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     url: jdbc:log4jdbc:mysql://localhost:3306/blog?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
-    password:  1111
+    password: 1111
     hikari:
       pool-name: hikari-cp
       maximum-pool-size: 30
