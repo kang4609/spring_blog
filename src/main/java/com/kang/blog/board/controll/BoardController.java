@@ -1,5 +1,6 @@
 package com.kang.blog.board.controll;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.kang.blog.board.dto.BoardDto;
 import com.kang.blog.board.service.BoardService;
@@ -9,11 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @AllArgsConstructor
+@Slf4j
 public class BoardController {
     private BoardService boardService;
 
     @GetMapping("/board")
     public String list() {
+        log.debug("board/list = >>>>>>>>> " );
         return "board/list";
     }
 

@@ -1,32 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<!-- HEADER -->
-<div th:insert="common/header.html" id="header"></div>
-<table id="userTable">
-    <thead>
-    <tr>
-        <th>Email</th>
-        <th>Name</th>
-        <th>User Status</th>
-        <th>Super User</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="user : ${userList}">
-        <td th:text="${user.email}">emil</td>
-        <td th:text="${user.fullNmKr}">name</td>
-        <td th:text="${user.userStatCd}">stat</td>
-        <td th:text="${user.superUser}">super</td>
-    </tr>
-    </tbody>
-</table>
-<a th:href="@{/board/post}">글쓰기</a>
-<!-- FOOTER -->
-<div th:insert="common/footer.html" id="footer"></div>
-</body>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+
+<th:block layout:fragment="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        ...
+        <a th:href="@{/board/post}">글쓰기</a>
+    </div>
+</th:block>
 </html>
