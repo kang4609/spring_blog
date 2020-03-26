@@ -12,10 +12,16 @@ spring:
       cache: false
 
   datasource:
+    type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     url: jdbc:log4jdbc:mysql://localhost:3306/blog?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
-    password: 1111
+    password:  1111
+    hikari:
+      pool-name: hikari-cp
+      maximum-pool-size: 30
+      minimum-idle: 2
+      max-lifetime: 30000
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
