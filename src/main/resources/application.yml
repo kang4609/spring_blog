@@ -32,6 +32,10 @@ spring:
       ddl-auto: create
 #    ddl-auto: create # SessionFactory가 시작될 때 데이터베이스 drop을 실행하고 생성된 DDL을 실행한다
 
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
 logging:
   level:
     com.kang.blog.*: DEBUG

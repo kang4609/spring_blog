@@ -1,5 +1,6 @@
 package com.kang.blog.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -13,9 +14,13 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(basePackages = "com.kang.blog")
+@Slf4j
 public class DatabaseConfig {
     @Bean
     public SqlSessionFactory sqlSessionFactory (@Qualifier("dataSource") DataSource dataSource) throws Exception {
+
+        log.debug("================ sqlSessionFactory =================" );
+
         SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 
         sqlSessionFactory.setDataSource(dataSource);
@@ -26,6 +31,9 @@ public class DatabaseConfig {
 
     @Bean
     public SqlSessionTemplate sqlSession (SqlSessionFactory sqlSessionFactory) {
+        log.debug("================ sqlSession =================" );
+
+
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }
