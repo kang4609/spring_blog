@@ -15,8 +15,8 @@
     </appender>
 
 
-    <!-- 기본으로 적용되는 설정 -->
-    <root level="debug">
+    <!-- 기본으로 적용되는 설정 off - debug -->
+    <root level="off">
         <appender-ref ref="console"/>
     </root>
 
@@ -26,8 +26,4 @@
     <logger name="jdbc.sqlonly" level="INFO" appender-ref="console-infolog"/>
     <logger name="jdbc.resultsettable" level="INFO" appender-ref="console-infolog"/>
 
-    <!-- 루트 로거 -->
-    <root level="off">
-        <appender-ref ref="console"/>
-    </root>
 </configuration>
