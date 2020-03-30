@@ -1,5 +1,7 @@
 package com.kang.blog.board.controll;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,12 +13,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
+@Api(tags = {"1. User"})
 @Controller
 @AllArgsConstructor
 @Slf4j
 public class BoardController {
     private BoardService boardService;
 
+    @ApiOperation(value = "게시판 조회", notes = "모든 게시판을 조회한다")
     @GetMapping("/board")
     public String list(Model model) {
         log.debug("board/list = >>>>>>>>> " );
@@ -26,6 +30,7 @@ public class BoardController {
        return "board/list";
     }
 
+    @ApiOperation(value = "게시판 등록", notes = "모든 게시판을 등록한다")
     @GetMapping("/board/post")
     public String write() {
         return "board/write";
